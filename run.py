@@ -27,3 +27,7 @@ age = input("Age = ")
 phone_number = input("Phone number = ")
 
 print("Thank you for enterting your contact's information")
+
+#Printing the full persons name by using the "the_contact.full_name" method to print that out into the terminal
+the_contact = contact(first_name,last_name,age,phone_number)
+the_contact.full_name()
