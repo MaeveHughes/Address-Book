@@ -6,6 +6,17 @@ This is the main file for a command line interface address book.
 The main objective is for users to log personal contact information.
 """
 
+#Contact class
+class contact: 
+    def __init__(self, first_name, last_name, age, phone_number):
+        self first_name = first_name
+        self last_name = last_name
+        self age = age
+        self phone_number = phone_number
+
+    def full_name(self):
+        print(f'{self.first_name} {self.last_name}')
+
 #Giving the user the ability to add a contact to the address book
 print("Welcome to the address book program")
 print("Please enter your contact's details")
