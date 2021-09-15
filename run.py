@@ -17,6 +17,15 @@ class contact:
     def full_name(self):
         print(f"{first_name} {last_name}")
 
+    def __str__(self):
+        return_str = "---------\n"
+        return_str += f"{self.first_name}\n"
+        return_str += f"{self.last_name}\n"
+        return_str += f"{self.age}\n"
+        return_str += f"{self.phone_number}\n"
+        return_str += "---------\n"
+        return return_str
+
 #Giving the user the ability to add a contact to the address book
 print("Welcome to the address book program")
 print("Please enter your contact's details")
@@ -30,4 +39,4 @@ print("Thank you for enterting your contact's information")
 
 #Printing the full persons name by using the "the_contact.full_name" method to print that out into the terminal
 the_contact = contact(first_name,last_name,age,phone_number)
-the_contact.full_name()
+print(the_contact)
