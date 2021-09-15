@@ -35,7 +35,7 @@ while contact_details != "X":
     print("B - Display all contacts")
     print("C - Find a contact")
     print("X - exit program")
-    users_input = input("Select option: ")
+    contact_details = input("Select option: ")
 
     if contact_details  == "A":
         print("Please enter your contact's details")
