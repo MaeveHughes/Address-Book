@@ -18,25 +18,49 @@ class contact:
         print(f"{first_name} {last_name}")
 
     def __str__(self):
-        return_str = "---------\n"
-        return_str += f"{self.first_name}\n"
-        return_str += f"{self.last_name}\n"
-        return_str += f"{self.age}\n"
-        return_str += f"{self.phone_number}\n"
-        return_str += "---------\n"
-        return return_str
+        return f"{self.first_name} {self.last_name} : {self.age} : {self.phone_number}"
 
-#Giving the user the ability to add a contact to the address book
+#Providing the user with different choices
+#Giving the user a choice to add a contact and to print out all of the comtacts
+
+contacts = list()
+
+contact_details = ""
+
 print("Welcome to the address book program")
-print("Please enter your contact's details")
 
-first_name = input("First name = ")
-last_name = input("Last name = ")
-age = input("Age = ")
-phone_number = input("Phone number = ")
+while contact_details != "X":
+    print("Please select from the below options")
+    print("A - Enter a new contact")
+    print("B - Display all contacts")
+    print("C - Find a contact")
+    print("X - exit program")
+    users_input = input("Select option: ")
 
-print("Thank you for enterting your contact's information")
+    if contact_details  == "A":
+        print("Please enter your contact's details")
 
-#Printing the full persons name by using the "the_contact.full_name" method to print that out into the terminal
-the_contact = contact(first_name,last_name,age,phone_number)
-print(the_contact)
+        first_name = input("First name = ")
+        last_name = input("Last name = ")
+        age = input("Age = ")
+        phone_number = input("Phone number = ")
+
+        the_contact = contact(first_name,last_name,age,phone_number)
+        contacts.append(the_contact)
+        print("Thank you for entering your contact's information")
+
+    elif contact_details  == "B":
+        for contact in contacts:
+            print(contact)
+        input("Contacts displayed. Hit enter to continue.")
+
+    elif contact_details == "C":
+        to_lookup = input("Enter contact's name to lookup\n")
+        for contact in contacts:
+            if to_lookup in contact.full_name():
+                print(contact)
+
+    elif contact_details.lower() == "X":
+        break
+
+    print("Thank you for using the address book, we hope to see you soon")
