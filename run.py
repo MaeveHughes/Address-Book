@@ -40,7 +40,11 @@ if os.path.isfile("contacts.csv"):
 
 contact_details = ""
 
-print("Welcome to the address book program")
+print('Welcome to the address book program\n')
+print('To use this app, hit enter after each choice.\n')
+print('Attention: using the comma button when entering entering a name')
+print('in this application causes the app to malfunction. We are aware of')
+print('this and are working on it. Thank you for your patience.\n')
 
 while contact_details != "X":
     print("Please select from the below options")
