@@ -15,7 +15,7 @@ class contact:
         self.phone_number = phone_number
 
     def full_name(self):
-        return f"{first_name} {last_name}"
+        return f'{self.first_name} {self.last_name}'
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} : {self.age} : {self.phone_number}"
