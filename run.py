@@ -63,4 +63,10 @@ while contact_details != "X":
     elif contact_details.lower() == "X":
         break
 
-    print("Thank you for using the address book, we hope to see you soon")
+    # Reading and Writing Data from a CSV File in Python for the Address Book 
+    
+with open("contacts.csv", "w") as f:
+    for contact in contacts:
+        f.write(f"{contact.first_name},{contact.last_name},{contact.age},{contact.phone_number}\n")
+
+print("Thank you for using the address book, we hope to see you soon")
