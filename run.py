@@ -27,6 +27,17 @@ class contact:
 
 contacts = list()
 
+if os.path.isfile("contacts.csv"):
+    with open("contacts.csv") as f:
+        csv_list = f.readlines()
+        for line in csv_list:
+            data = line.rstrip().split(",")
+            person = contact(data[0],
+                             data[1], 
+                             data[2],
+                             data[3])
+            contacts.append(person)
+
 contact_details = ""
 
 print("Welcome to the address book program")
