@@ -22,12 +22,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Address Book')
 
-file = SHEET.worksheet('file')
-
-data = file.get_all_values()
-
-print(data)
-
 import os
 
 #Contact class
@@ -54,7 +48,7 @@ if os.path.isfile("contacts.csv"):
         csv_list = f.readlines()
         for line in csv_list:
             data = line.rstrip().split(",")
-            person = contact(data[0],
+            person = Contact(data[0],
                              data[1], 
                              data[2],
                              data[3])
