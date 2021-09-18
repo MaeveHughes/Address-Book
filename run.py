@@ -47,14 +47,15 @@ print('in this application causes the app to malfunction. We are aware of')
 print('this and are working on it. Thank you for your patience.\n')
 
 while contact_details != "X":
-    print("Please select from the below options")
+    print("Please select from the below options/n")
+    print("Please use capital letters\n")
     print("A - Enter a new contact")
     print("B - Display all contacts")
     print("C - Find a contact")
     print("X - exit program")
     contact_details = input("Select option: ")
 
-    if contact_details  == "A":
+    if contact_details == "A":
         print("Please enter your contact's details\n")
         print('Your data will be saved to our database upon confirmation.\n')
 
@@ -63,11 +64,11 @@ while contact_details != "X":
         age = input("Age = ")
         phone_number = input("Phone number = ")
 
-        the_contact = contact(first_name,last_name,age,phone_number)
+        the_contact = contact(first_name, last_name, age, phone_number)
         contacts.append(the_contact)
         print("Thank you for entering your contact's information")
 
-    elif contact_details  == "B":
+    elif contact_details == "B":
         for contact in contacts:
             print(contact)
         input("Contacts displayed. Hit enter to continue.")
@@ -82,7 +83,7 @@ while contact_details != "X":
         break
 
     # Reading and Writing Data from a CSV File in Python for the Address Book 
-    
+   
 with open("contacts.csv", "w") as f:
     for contact in contacts:
         f.write(f"{contact.first_name},{contact.last_name},{contact.age},{contact.phone_number}\n")
