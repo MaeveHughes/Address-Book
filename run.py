@@ -47,7 +47,7 @@ print('in this application causes the app to malfunction. We are aware of')
 print('this and are working on it. Thank you for your patience.\n')
 
 while contact_details != "X":
-    print("Please select from the below options/n")
+    print("Please select from the below options\n")
     print("Please use capital letters\n")
     print("A - Enter a new contact")
     print("B - Display all contacts")
