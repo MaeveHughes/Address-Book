@@ -73,7 +73,7 @@ while contact_details != "X":
     elif contact_details == "B":
         for contact in contacts:
             print(contact)
-        input("Contacts displayed. Hit enter to continue.")
+        input("\nContacts displayed above. Hit enter to continue.")
 
     elif contact_details == "C":
         to_lookup = input("Enter contact's name to lookup\n")
