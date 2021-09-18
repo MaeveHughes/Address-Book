@@ -9,7 +9,7 @@ The main objective is for users to log personal contact information.
 import os
 
 #Contact class
-class contact: 
+class Contact: 
     def __init__(self, first_name, last_name, age, phone_number):
         self.first_name = first_name
         self.last_name = last_name
@@ -52,7 +52,7 @@ while contact_details != "X":
     print("A - Enter a new contact")
     print("B - Display all contacts")
     print("C - Find a contact")
-    print("X - exit program")
+    print("X - Exit program")
     contact_details = input("\nSelect option: ")
 
     if contact_details == "A":
@@ -64,20 +64,20 @@ while contact_details != "X":
         age = input("Age = ")
         phone_number = input("Phone number = ")
 
-        the_contact = contact(first_name, last_name, age, phone_number)
+        the_contact = Contact(first_name, last_name, age, phone_number)
         contacts.append(the_contact)
         print("\nThank you for entering your contact's information")
 
     elif contact_details == "B":
-        for contact in contacts:
-            print(contact)
+        for Contact in contacts:
+            print(Contact)
         input("\nContacts displayed above. Hit enter to continue.")
 
     elif contact_details == "C":
-        to_lookup = input("Enter contact's name to lookup:\n")
-        for contact in contacts:
+        to_lookup = input("\nEnter contact's name to lookup:\n")
+        for Contact in contacts:
             if to_lookup in contact.full_name():
-                print(contact)
+                print(Contact)
 
     elif contact_details.lower() == "X":
         break
@@ -85,7 +85,7 @@ while contact_details != "X":
     # Reading and Writing Data from a CSV File in Python for the Address Book 
    
 with open("contacts.csv", "w") as f:
-    for contact in contacts:
+    for Contact in contacts:
         f.write(f"{contact.first_name},{contact.last_name},{contact.age},{contact.phone_number}\n")
 
-print("Thank you for using the address book, we hope to see you soon")
+print("\nThank you for using the address book, we hope to see you soon")
