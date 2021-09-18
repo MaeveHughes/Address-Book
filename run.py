@@ -56,7 +56,7 @@ while contact_details != "X":
     contact_details = input("\nSelect option: ")
 
     if contact_details == "A":
-        print("Please enter your contact's details\n")
+        print("\nPlease enter your contact's details\n")
         print('Your data will be saved to our database upon confirmation.\n')
 
         first_name = input("First name = ")
