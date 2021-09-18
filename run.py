@@ -66,9 +66,7 @@ while contact_details != "X":
 
         the_contact = contact(first_name, last_name, age, phone_number)
         contacts.append(the_contact)
-        print("Thank you for entering your contact's information\n")
-        print("Please select from the below options/n")
-        print("Please use capital letters\n")
+        print("\nThank you for entering your contact's information")
 
     elif contact_details == "B":
         for contact in contacts:
@@ -76,7 +74,7 @@ while contact_details != "X":
         input("\nContacts displayed above. Hit enter to continue.")
 
     elif contact_details == "C":
-        to_lookup = input("Enter contact's name to lookup\n")
+        to_lookup = input("Enter contact's name to lookup:\n")
         for contact in contacts:
             if to_lookup in contact.full_name():
                 print(contact)
