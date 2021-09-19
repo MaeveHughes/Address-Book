@@ -104,13 +104,4 @@ with open("contacts.csv", "w") as f:
     for Contact in contacts:
         f.write(f"{Contact.first_name},{Contact.last_name},{Contact.age},{Contact.phone_number}\n")
 
-def update_worksheet(data):
-    """
-    Update worksheet, add new row with the data provided by user
-    """
-    print("Updating worksheet...\n")
-    file_worksheet = SHEET.worksheet("file")
-    file_worksheet.append_row(data)
-    print("Worksheet updated successfully.\n")
-
 print("\nThank you for using the address book, we hope to see you soon")
