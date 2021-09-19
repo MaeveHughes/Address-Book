@@ -62,16 +62,20 @@ print('Attention: using the comma button when entering entering a name')
 print('in this application causes the app to malfunction. We are aware of')
 print('this and are working on it. Thank you for your patience.\n')
 
-while contact_details != "X":
-    print("Please select from the below options\n")
-    print("Please use capital letters\n")
-    print("A - Enter a new contact")
-    print("B - Display all contacts")
-    print("C - Find a contact")
-    print("X - Exit program")
-    contact_details = input("\nSelect option: ")
+while True:
+#Get functions choice
+    while True:
+        try:
+            contact_details = int(input("\nPlease select from the below options:\n 1 - Enter a new contact\n 2 - Display all contacts\n 3 - Find a contact\n 4 - Exit program\n Select option: "))
+            if (contact_details >= 1 and function_choice <= 4):
+                clear_output()
+                break
+            else:
+                print("Please ensure the number you entered is between 1 and 3. Try again.")
+        except:
+            print("Please enter a number. Try again.")
 
-    if contact_details == "A":
+    if contact_details == "1":
         print("\nPlease enter your contact's details\n")
         print('Your data will be saved to our database upon confirmation.\n')
 
@@ -84,18 +88,18 @@ while contact_details != "X":
         contacts.append(the_contact)
         print("\nThank you for entering your contact's information")
 
-    elif contact_details == "B":
+    elif contact_details == "2":
         for Contact in contacts:
             print(Contact)
         input("\nContacts displayed above. Hit enter to continue.")
 
-    elif contact_details == "C":
+    elif contact_details == "3":
         to_lookup = input("\nEnter contact's name to lookup:\n")
         for Contact in contacts:
             if to_lookup in contact.full_name():
                 print(Contact)
 
-    elif contact_details.lower() == "X":
+    elif contact_details == "4":
         break
 
     # Reading and Writing Data from a CSV File in Python for the Address Book 
