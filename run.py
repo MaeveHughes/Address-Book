@@ -66,19 +66,18 @@ while True:
 #Get functions choice
     while True:
         try:
-            contact_details = int(input("\nPlease select from the below options:\n 1 - Enter a new contact\n 2 - Display all contacts\n 3 - Find a contact\n 4 - Exit program\n Select option: "))
-            if (contact_details >= 1 and function_choice <= 4):
-                clear_output()
+            contact_details = input("\nPlease select from the below options:\n 1 - Enter a new contact\n 2 - Display all contacts\n 3 - Find a contact\n 4 - Exit program\n Select option: ")
+            if (int(contact_details) >= 1 and int(contact_details) <= 4):
                 break
             else:
                 print("Please ensure the number you entered is between 1 and 3. Try again.")
-        except:
-            print("Please enter a number. Try again.")
+        except Exception as e:
+            print("Please enter a number. Try again.") 
 
     if contact_details == "1":
         print("\nPlease enter your contact's details\n")
-        print('Your data will be saved to our database upon confirmation.\n')
-
+        print('Your data will be saved to our database upon confirmation.\n')  
+            
         first_name = input("First name = ")
         last_name = input("Last name = ")
         age = input("Age = ")
@@ -102,7 +101,7 @@ while True:
     elif contact_details == "4":
         break
 
-    # Reading and Writing Data from a CSV File in Python for the Address Book 
+# Reading and Writing Data from a CSV File in Python for the Address Book 
    
 with open("contacts.csv", "w") as f:
     for Contact in contacts:
