@@ -96,7 +96,7 @@ while True:
                 else:
                     print("Can you please check the spelling? Please do not use numbers or symbols!")
             except Exception as e:
-                print("Please enter a number. Try again.") 
+                print("Please enter a letter. Try again.") 
         
         while True:
             try:
@@ -117,7 +117,7 @@ while True:
                 else:
                     print("Can you please check the spelling? Please do not use numbers or symbols!")
             except Exception as e:
-                print("Please enter a number. Try again.") 
+                print("Please enter a letter. Try again.") 
 
         age = input("Age = ")
           
