@@ -38,7 +38,7 @@ class Contact:
         return f'{self.first_name} {self.last_name}'
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} : {self.age} : {self.phone_number} : {self.address}, {self.email}"
+        return f"{self.first_name} {self.last_name} : {self.age} : {self.phone_number} : {self.address}: {self.email}"
 
 #Providing the user with different choices
 #Giving the user a choice to add a contact and to print out all of the comtacts
@@ -62,9 +62,8 @@ contact_details = ""
 
 print('Welcome to the address book program\n')
 print('To use this app, hit enter after each choice.\n')
-print('Attention: using the comma button when entering entering a name')
-print('in this application causes the app to malfunction. We are aware of')
-print('this and are working on it. Thank you for your patience.\n')
+print('Attention: Contacts will be saved to the contacts.csv file.')
+print('If your PC sleeps or is shut down the contacts will be removed from the csv file.')
 
 while True:
 #Get functions choice
@@ -162,18 +161,23 @@ while True:
         input("\nContacts displayed above. Hit enter to continue.")
 
     elif contact_details == "3":
-        to_lookup = input("\nEnter contact's name to lookup:\n")
-        for Contact in contacts:
-            if to_lookup in contact.full_name():
-                print(Contact)
+        while True:
+            to_lookup = input("\nEnter contact's name to lookup:\n")
+            for Contact in contacts:
+                if to_lookup == Contact.fullname()
+                    print(Contact)
+                    break
+                else:
+                    print("Contact not available in the address book.")
+                
 
-    elif contact_details == "4":
+    elif contact_details.lower() == "4":
         break
 
 # Reading and Writing Data from a CSV File in Python for the Address Book 
   
 with open("contacts.csv", "w") as f:
-    for Contact in contacts:
-        f.write(f"{Contact.first_name}, {Contact.last_name}, {Contact.age}, {Contact.phone_number}, {Contact.address} {Contact.email}\n")
+    for contact in contacts:
+        f.write(f"{Contact.first_name}, {Contact.last_name}, {Contact.age}, {Contact.phone_number}, {Contact.address}, {Contact.email}\n")
 
 print("\nThank you for using the address book, we hope to see you soon")
