@@ -98,24 +98,26 @@ while True:
             except Exception as e:
                 print("Please enter a number. Try again.") 
         
+        while True:
+            try:
+                last_name = input("Last name = ")
+                import string
 
-        last_name = input("Last name = ")
+                allowed_alpha = string.ascii_letters + string.whitespace
 
-        import string
+                # a test name
+                #name = "Mark Zumkoff"
 
-        allowed_alpha = string.ascii_letters + string.whitespace
+                # gives False because of space
+                #print(first_name.isalpha())
 
-        # a test name
-        #name = "Mark Zumkoff"
-
-        # gives False because of space
-        #print(first_name.isalpha())
-
-        # this test allows spaces
-        if all(c in allowed_alpha for c in last_name):
-            print(last_name)
-        else:
-            print("Can you please check the spelling? Please do not use numbers or symbols!")
+                # this test allows spaces
+                if all(c in allowed_alpha for c in last_name):
+                    break
+                else:
+                    print("Can you please check the spelling? Please do not use numbers or symbols!")
+            except Exception as e:
+                print("Please enter a number. Try again.") 
 
         age = input("Age = ")
           
