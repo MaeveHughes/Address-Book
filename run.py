@@ -76,11 +76,28 @@ while True:
 
     if contact_details == "1":
         print("\nPlease enter your contact's details\n")
-        print('Your data will be saved to our database upon confirmation.\n')  
-            
+        print('Your data will be saved to our database upon confirmation.\n') 
+        
         first_name = input("First name = ")
+        import string
+
+        allowed_alpha = string.ascii_letters + string.whitespace
+
+        # a test name
+        #name = "Mark Zumkoff"
+
+        # gives False because of space
+        #print(first_name.isalpha())
+
+        # this test allows spaces
+        if all(c in allowed_alpha for c in first_name):
+            print(first_name)
+        else:
+            print("Can you please check the spelling? Please do not use numbers or symbols")
+
         last_name = input("Last name = ")
         age = input("Age = ")
+          
         phone_number = input("Phone number = ")
 
         the_contact = Contact(first_name, last_name, age, phone_number)
