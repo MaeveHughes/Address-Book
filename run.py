@@ -129,10 +129,15 @@ while True:
             except Exception as e:
                 print("Please enter a number. Try again.") 
 
-                
-
-          
-        phone_number = input("Phone number = ")
+        while True:
+            try:
+                phone_number = input("Phone number = ")
+                if (len(str(phone_number)) == 9):
+                    break
+                else:
+                    print("Please ensure that the phone number has 9 digits. Try again.")
+            except:
+                print("Please ensure you have entered a phone number. Try again.")
 
         the_contact = Contact(first_name, last_name, age, phone_number)
         contacts.append(the_contact)
