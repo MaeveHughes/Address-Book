@@ -118,8 +118,19 @@ while True:
                     print("Can you please check the spelling? Please do not use numbers or symbols!")
             except Exception as e:
                 print("Please enter a letter. Try again.") 
+        
+        while True:
+            try:
+                age = input("Age = ")
+                if (int(age) <= 150):
+                    break
+                else:
+                    print("Is this a valid age?")
+            except Exception as e:
+                print("Please enter a number. Try again.") 
 
-        age = input("Age = ")
+                
+
           
         phone_number = input("Phone number = ")
 
