@@ -26,17 +26,18 @@ import os
 
 #Contact class
 class Contact: 
-    def __init__(self, first_name, last_name, age, phone_number):
+    def __init__(self, first_name, last_name, age, phone_number, address):
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
         self.phone_number = phone_number
+        self.address = address
 
     def full_name(self):
         return f'{self.first_name} {self.last_name}'
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} : {self.age} : {self.phone_number}"
+        return f"{self.first_name} {self.last_name} : {self.age} : {self.phone_number} : {self.address}"
 
 #Providing the user with different choices
 #Giving the user a choice to add a contact and to print out all of the comtacts
@@ -48,10 +49,11 @@ if os.path.isfile("contacts.csv"):
         csv_list = f.readlines()
         for line in csv_list:
             data = line.rstrip().split(",")
-            person = Contact(data[0],
-                             data[1], 
-                             data[2],
-                             data[3])
+            person = Contact([0],
+                             [1], 
+                             [2],
+                             [3],
+                             [4])
             contacts.append(person)
 
 contact_details = ""
@@ -139,7 +141,9 @@ while True:
             except:
                 print("Please ensure you have entered a phone number. Try again.")
 
-        the_contact = Contact(first_name, last_name, age, phone_number)
+        address = input("Postal Address = ")
+
+        the_contact = Contact(first_name, last_name, age, phone_number, address)
         contacts.append(the_contact)
         print("\nThank you for entering your contact's information")
 
@@ -158,9 +162,9 @@ while True:
         break
 
 # Reading and Writing Data from a CSV File in Python for the Address Book 
-   
+  
 with open("contacts.csv", "w") as f:
     for Contact in contacts:
-        f.write(f"{Contact.first_name},{Contact.last_name},{Contact.age},{Contact.phone_number}\n")
+        f.write(f"{Contact.first_name}, {Contact.last_name}, {Contact.age}, {Contact.phone_number}, {Contact.address}\n")
 
 print("\nThank you for using the address book, we hope to see you soon")
