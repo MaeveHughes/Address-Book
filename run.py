@@ -63,7 +63,17 @@ contact_details = ""
 print('Welcome to the address book program\n')
 print('To use this app, hit enter after each choice.\n')
 print('Attention: Contacts will be saved to the contacts.csv file.')
-print('If your PC sleeps or is shut down the contacts will be removed from the csv file.')
+print('If your PC sleeps or is shut down the contacts will be removed from the csv file')
+
+def update_worksheet(data):
+    """
+    Update worksheet, add new row with the data provided by user
+    """
+    print("Updating worksheet...\n")
+    file_worksheet = SHEET.worksheet("file")
+    file_worksheet.append_row(data)
+    print("Worksheet updated successfully.\n")
+
 
 while True:
 #Get functions choice
@@ -153,6 +163,7 @@ while True:
 
         the_contact = Contact(first_name, last_name, age, phone_number, address, email)
         contacts.append(the_contact)
+        update_worksheet(the_contact)
         print("\nThank you for entering your contact's information")
 
     elif contact_details == "2":
@@ -161,11 +172,15 @@ while True:
         input("\nContacts displayed above. Hit enter to continue.")
 
     elif contact_details == "3":
-        while True:
+        runner = True 
+        while runner:
             to_lookup = input("\nEnter contact's name to lookup:\n")
+
             for Contact in contacts:
-                if to_lookup == Contact.fullname()
+                
+                if to_lookup in Contact.full_name():
                     print(Contact)
+                    runner = False 
                     break
                 else:
                     print("Contact not available in the address book.")
@@ -180,4 +195,5 @@ with open("contacts.csv", "w") as f:
     for contact in contacts:
         f.write(f"{Contact.first_name}, {Contact.last_name}, {Contact.age}, {Contact.phone_number}, {Contact.address}, {Contact.email}\n")
 
+    
 print("\nThank you for using the address book, we hope to see you soon")
