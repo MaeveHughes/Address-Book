@@ -26,18 +26,19 @@ import os
 
 #Contact class
 class Contact: 
-    def __init__(self, first_name, last_name, age, phone_number, address):
+    def __init__(self, first_name, last_name, age, phone_number, address, email):
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
         self.phone_number = phone_number
         self.address = address
+        self.email = email
 
     def full_name(self):
         return f'{self.first_name} {self.last_name}'
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} : {self.age} : {self.phone_number} : {self.address}"
+        return f"{self.first_name} {self.last_name} : {self.age} : {self.phone_number} : {self.address}, {self.email}"
 
 #Providing the user with different choices
 #Giving the user a choice to add a contact and to print out all of the comtacts
@@ -53,7 +54,8 @@ if os.path.isfile("contacts.csv"):
                              [1], 
                              [2],
                              [3],
-                             [4])
+                             [4],
+                             [5])
             contacts.append(person)
 
 contact_details = ""
@@ -143,7 +145,14 @@ while True:
 
         address = input("Postal Address = ")
 
-        the_contact = Contact(first_name, last_name, age, phone_number, address)
+        while True:
+            email = input("Email address: ")
+            if ("@" in email):
+                break
+            else:
+                print("Please ensure you have entered an email address. Try again.")
+
+        the_contact = Contact(first_name, last_name, age, phone_number, address, email)
         contacts.append(the_contact)
         print("\nThank you for entering your contact's information")
 
@@ -165,6 +174,6 @@ while True:
   
 with open("contacts.csv", "w") as f:
     for Contact in contacts:
-        f.write(f"{Contact.first_name}, {Contact.last_name}, {Contact.age}, {Contact.phone_number}, {Contact.address}\n")
+        f.write(f"{Contact.first_name}, {Contact.last_name}, {Contact.age}, {Contact.phone_number}, {Contact.address} {Contact.email}\n")
 
 print("\nThank you for using the address book, we hope to see you soon")
