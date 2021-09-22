@@ -64,9 +64,9 @@ while True:
         try:
             contact_details = input("Please select from the below options:\
                  \n 1 - Enter a new contact \n 2 - Display all contacts \n\
-                  3 - Find a contact\n 4 - Delete a contact\n 5 - Exit program\
+                  3 - Find a contact\n 54- Exit program\
                        \n Select option: \n")
-            if (int(contact_details) >= 1 and int(contact_details) <= 5):
+            if (int(contact_details) >= 1 and int(contact_details) <= 4):
                 break
             else:
                 print("Please ensure the number you entered is ")
@@ -179,19 +179,22 @@ while True:
                 if to_lookup in person.full_name():
                     print(person)
                     runner = False
+# Tried to create a delete contact option however the\
+# contact was only deleting temporarily. Commenting the\
+# code out so I can review at a later date
 
-    elif contact_details == "4":
+    # elif contact_details == "4":
         # Removes a contact.
         # Keyword arguments:
         # Contacts have to be spelt exactly how they were inputted
 
-        to_lookup = input("Enter the name to delete: ")
-        for person in contacts:
-            if to_lookup in person.full_name():
-                del person
-            print("Deleted the contact.")
+        # to_lookup = input("Enter the name to delete: ")
+       # for person in contacts:
+           # if to_lookup in person.full_name():
+              #  del person
+            # print("Deleted the contact.")
 
-    elif contact_details.lower() == "5":
+    elif contact_details.lower() == "4":
         # Ends the program.
         break
 

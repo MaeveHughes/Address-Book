@@ -2,19 +2,19 @@
 
 [View the live project here.](link to website)
 
-<p>Address Book is a Python Program which runs in the Code Institute mock terminal on Heroku. Users can add, view and search contacts in the address book</p>
+<p>Address Book is a Python Program which runs in the Code Institute mock terminal on Heroku. Users can add, view and search contacts in the address book.</p>
 
 -   ### User stories
 
     -   #### First Time Visitor Goals
-        1. As a First Time Visitor, I want to learn add a contact
+        1. As a First Time Visitor, I want to learn add a contact.
 
     -   #### Returning Visitor Goals
 
-        1. As a Returning Visitor, I want to search a contact
+        1. As a Returning Visitor, I want to search a contact.
 
     -   #### Frequent User Goals
-        1. As a Frequent User, I want to view all contacts
+        1. As a Frequent User, I want to view all contacts.
 
 -   ### Project Use
     -   #### Project goals for intended use are:
@@ -24,7 +24,7 @@
 
     -   #### My personal goals
         1. To build an address book application.
-        2. To gain knowledge of the Python program language
+        2. To gain knowledge of the Python program language.
 
 -   ### Users goals 
 Users should find it simple to input and store contacts. Users should also be aware their data is being stored. Users should also find it easy to search and to view all contacts.
@@ -75,24 +75,26 @@ Target audience: Users of all ages.
 PEP8 online was used to check the code for PEP8 requirements. All the code passes with no errors and no warning signs to show.
 
 -   ### Known bugs
-Everytime the computer sleeps or is shut down it clears the contacts from the contacts.csv file.
+- Everytime the computer sleeps or is shut down it clears the contacts from the contacts.csv file. I tried to resolve this by creating an API google sheet. The google sheet linked fine however the user input did not transfer over to the google sheets. This is something I would like to research and resolve in the near future as it would be more effective using a google sheet than the contacts.csv as it would save the content eternally.
+
+- I attempted to write code for a delete contact option however the contact was only deleted temporarily and I wanted the contact to be deleted permanently. I have commented out the code in the run.py file as it is something I would like to research and resolve. 
 
 -   ### Deployment
 The website was deployed using Heroku by "following these steps:
-1. Use the "pip freeze -> requiremnts.txt" command in the terminal to save any libraries that need to be instaled in the file
-2. Login or create a Heroku account
-3. Click the "new" button in the upper right corner and select "create new app"
-4. Choose an app name and your region and click "Create app"
-5. Go to the "settings" tab, add the python build pack and then the node.js build pack
-6. Go to the "deploy" tab and pick GitHub as a deployment method
-7. Search for a repository to connect to
-8. Click enable automatic deploys and then deploy branch
-9. Wait for the app to build and then click on the "View" link
+1. Use the "pip freeze -> requiremnts.txt" command in the terminal to save any libraries that need to be instaled in the file.
+2. Login or create a Heroku account.
+3. Click the "new" button in the upper right corner and select "create new app".
+4. Choose an app name and your region and click "Create app".
+5. Go to the "settings" tab, add the python build pack and then the node.js build pack.
+6. Go to the "deploy" tab and pick GitHub as a deployment method.
+7. Search for a repository to connect to.
+8. Click enable automatic deploys and then deploy branch.
+9. Wait for the app to build and then click on the "View" link.
 
 -   ### Credits 
 The project layout and idea came from the following YouTube videos:
 -   https://www.youtube.com/watch?v=PxZE0e-ePoI&t=3s
--   https://www.youtube.com/watch?v=Ok8APOzMIAQ&t=4s
+-   https://www.youtube.com/watch?v=bmBbaQQwDaY&t=571s
 -   https://www.youtube.com/watch?v=nARBRCoFGMc
 
 -   ### Acknowledgements
