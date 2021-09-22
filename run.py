@@ -155,8 +155,8 @@ while True:
                 print("Please ensure you have entered")
                 print("an email address. Try again.")
 
-        the_contact = Contact(first_name, last_name, age,\
-             phone_number, address, email)
+        the_contact = Contact(first_name, last_name, age,
+                              phone_number, address, email)
         contacts.append(the_contact)
         print("\nThank you for entering your contact's information.")
 
@@ -189,9 +189,9 @@ while True:
         # Contacts have to be spelt exactly how they were inputted
 
         # to_lookup = input("Enter the name to delete: ")
-       # for person in contacts:
-           # if to_lookup in person.full_name():
-              #  del person
+        # for person in contacts:
+        # if to_lookup in person.full_name():
+        #  del person
             # print("Deleted the contact.")
 
     elif contact_details.lower() == "4":
