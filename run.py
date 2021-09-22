@@ -1,15 +1,18 @@
 """
-Main file run.py, for Address Book by Maeve Hughes
+Main file run.py, for Address Book by Maeve Hughes.
 This is the main file for a command line interface address book.
 The main objective is for users to log personal contact information.
 """
-# Installing google auth which will use our creds.json file to set up the authentication needed 
-# to access the Google Cloud project. Also installing gspread to access and update data in the spreadsheet.
-
 import os
 
 # Contact class
 class Contact: 
+
+    """
+    A Class is like an object constructor, or a "blueprint" for creating objects.
+    The __init__() function is called automatically every time the class is being used to create a new object.
+    """
+    
     def __init__(self, first_name, last_name, age, phone_number, address, email):
         self.first_name = first_name
         self.last_name = last_name
@@ -24,8 +27,8 @@ class Contact:
     def __str__(self):
         return f"{self.first_name} {self.last_name} : {self.age} : {self.phone_number} : {self.address}: {self.email}"
 
-# Providing the user with different choices
-# Giving the user a choice to add a contact and to print out all of the comtacts
+# Providing the user with different choices.
+# Giving the user a choice to add a contact, display all contacts, search for a contact and delete a contact.
 
 contacts = list()
 
@@ -47,7 +50,7 @@ contact_details = ""
 print('Welcome to the address book program\n')
 print('To use this app, hit enter after each choice.\n')
 print('Attention: Contacts will be saved to the contacts.csv file.')
-print('If your PC sleeps or is shut down the contacts will be removed from the csv file')
+print('If your PC sleeps or is shut down the contacts will be removed from the csv file.')
 
 
 while True:
@@ -63,7 +66,11 @@ while True:
             print("Please enter a number. Try again.") 
 
     if contact_details == "1":
-        print("\nPlease enter your contact's details\n")
+    #Adds a contact to the database.
+    #Keyword arguments:
+    #contact -- List containing contact entry information
+    
+        print("\nPlease enter your contact's details.\n")
         print('Your data will be saved to our database upon confirmation.\n') 
         while True:
             try:
@@ -130,7 +137,7 @@ while True:
         address = input("Postal Address = ")
 
         while True:
-            email = input("Email address: ")
+            email = input("Email address = ")
             if ("@" in email):
                 break
             else:
@@ -138,14 +145,16 @@ while True:
 
         the_contact = Contact(first_name, last_name, age, phone_number, address, email)
         contacts.append(the_contact)
-        print("\nThank you for entering your contact's information")
+        print("\nThank you for entering your contact's information.")
 
     elif contact_details == "2":
+    #Displays all contacts inputted from the database.
         for person in contacts:
             print(person)
         input("\nContacts displayed above. Hit enter to continue.")
 
     elif contact_details == "3":
+    #Creates a search bar for users to search for a contact.
         runner = True 
         while runner:
             to_lookup = input("\nEnter contact's name to lookup: \n\n Please ensure you use capital letters if capital letters were used when adding a contact.\n \n If there is no contact available press enter again and a list with all contacts appears.\n")
@@ -157,6 +166,10 @@ while True:
                     runner = False 
 
     elif contact_details == "4":
+    #Removes a contact.
+    #Keyword arguments:
+    #Contacts have to be spelt exactly how they were inputted
+
         to_lookup = input("Enter the name to delete: ")
         for person in contacts:
             if to_lookup in person.full_name():
@@ -164,6 +177,7 @@ while True:
             print("Deleted the contact.")        
 
     elif contact_details.lower() == "5":
+    #Ends the program.
         break
 
 # Reading and Writing Data from a CSV File in Python for the Address Book 
@@ -173,4 +187,4 @@ with open("contacts.csv", "w") as f:
         f.write(f"{person.first_name}, {person.last_name}, {person.age}, {person.phone_number}, {person.address}, {person.email}\n")
 
     
-print("\nThank you for using the address book, we hope to see you soon")
+print("\nThank you for using the address book, we hope to see you soon!")
