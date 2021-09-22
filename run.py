@@ -42,12 +42,12 @@ if os.path.isfile("contacts.csv"):
         csv_list = f.readlines()
         for contact_line in csv_list:
             contact_data = contact_line.rstrip().split(",")
-            person = Contact(contact_data[0],
-                             contact_data[1],
-                             contact_data[2],
-                             contact_data[3],
-                             contact_data[4],
-                             contact_data[5])
+            person = Contact([0],
+                             [1],
+                             [2],
+                             [3],
+                             [4],
+                             [5])
             contacts.append(person)
 
 contact_details = ""
