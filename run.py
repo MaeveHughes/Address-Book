@@ -6,14 +6,17 @@ The main objective is for users to log personal contact information.
 import os
 
 # Contact class
-class Contact: 
 
+
+class Contact:
     """
-    A Class is like an object constructor, or a "blueprint" for creating objects.
-    The __init__() function is called automatically every time the class is being used to create a new object.
+    A Class is like an object constructor,
+    or a "blueprint" for creating objects.
+    The __init__() function is called automatically
+    every time the class is being used to create a new object.
     """
-    
-    def __init__(self, first_name, last_name, age, phone_number, address, email):
+    def __init__(self, first_name, last_name, age,
+                 phone_number, address, email):
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
@@ -25,10 +28,15 @@ class Contact:
         return f'{self.first_name} {self.last_name}'
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} : {self.age} : {self.phone_number} : {self.address}: {self.email}"
+        return f"{self.first_name} {self.last_name}:
+                {self.age}:
+                    {self.phone_number}:
+                        {self.address}:
+                            {self.email}"
 
 # Providing the user with different choices.
-# Giving the user a choice to add a contact, display all contacts, search for a contact and delete a contact.
+# Giving the user a choice to add a contact,
+# display all contacts, search for a contact and delete a contact.
 
 contacts = list()
 
@@ -38,7 +46,7 @@ if os.path.isfile("contacts.csv"):
         for contact_line in csv_list:
             contact_data = contact_line.rstrip().split(",")
             person = Contact(contact_data[0],
-                             contact_data[1], 
+                             contact_data[1],
                              contact_data[2],
                              contact_data[3],
                              contact_data[4],
@@ -50,28 +58,34 @@ contact_details = ""
 print('Welcome to the address book program\n')
 print('To use this app, hit enter after each choice.\n')
 print('Attention: Contacts will be saved to the contacts.csv file.')
-print('If your PC sleeps or is shut down the contacts will be removed from the csv file.')
-
+print('If your PC sleeps or is shut down the contacts')
+print('will be removed from the csv file.')
 
 while True:
-# Get functions choice
+    # Get functions choice
     while True:
         try:
-            contact_details = input("\nPlease select from the below options:\n 1 - Enter a new contact\n 2 - Display all contacts\n 3 - Find a contact\n 4 - Delete a contact\n 5 - Exit program\n Select option: ")
+            contact_details = input("\nPlease select from the below options: \n
+                                    1 - Enter a new contact\n
+                                    2 - Display all contacts\n
+                                    3 - Find a contact\n
+                                    4 - Delete a contact\n
+                                    5 - Exit program\n Select option: ")
             if (int(contact_details) >= 1 and int(contact_details) <= 5):
                 break
             else:
-                print("Please ensure the number you entered is between 1 and 5. Try again.")
+                print("Please ensure the number you entered is ")
+                print("between 1 and 5. Try again.")
         except Exception as e:
-            print("Please enter a number. Try again.") 
+            print("Please enter a number. Try again.")
 
     if contact_details == "1":
-    #Adds a contact to the database.
-    #Keyword arguments:
-    #contact -- List containing contact entry information
-    
+        # Adds a contact to the database.
+        # Keyword arguments:
+        # contact -- List containing contact entry information
+
         print("\nPlease enter your contact's details.\n")
-        print('Your data will be saved to our database upon confirmation.\n') 
+        print('Your data will be saved to our database upon confirmation.\n')
         while True:
             try:
                 first_name = input("First name = ")
@@ -80,19 +94,19 @@ while True:
                 allowed_alpha = string.ascii_letters + string.whitespace
 
                 # a test name
-                #name = "Mark Zumkoff"
+                # name = "Mark Zumkoff"
 
                 # gives False because of space
-                #print(first_name.isalpha())
+                # print(first_name.isalpha())
 
                 # this test allows spaces
                 if all(c in allowed_alpha for c in first_name):
                     break
                 else:
-                    print("Can you please check the spelling? Please do not use numbers or symbols!")
+                    print("Can you please check the spelling?")
+                    print(Please do not use numbers or symbols!")
             except Exception as e:
-                print("Please enter a letter. Try again.") 
-        
+                print("Please enter a letter. Try again.")
         while True:
             try:
                 last_name = input("Last name = ")
@@ -101,19 +115,19 @@ while True:
                 allowed_alpha = string.ascii_letters + string.whitespace
 
                 # a test name
-                #name = "Mark Zumkoff"
+                # name = "Mark Zumkoff"
 
                 # gives False because of space
-                #print(first_name.isalpha())
+                # print(first_name.isalpha())
 
                 # this test allows spaces
                 if all(c in allowed_alpha for c in last_name):
                     break
                 else:
-                    print("Can you please check the spelling? Please do not use numbers or symbols!")
+                    print("Can you please check the spelling?")
+                    print("Please do not use numbers or symbols!")
             except Exception as e:
-                print("Please enter a letter. Try again.") 
-        
+                print("Please enter a letter. Try again.")
         while True:
             try:
                 age = input("Age = ")
@@ -122,7 +136,7 @@ while True:
                 else:
                     print("Is this a valid age?")
             except Exception as e:
-                print("Please enter a number. Try again.") 
+                print("Please enter a number. Try again.")
 
         while True:
             try:
@@ -130,9 +144,11 @@ while True:
                 if (len(str(phone_number)) == 9):
                     break
                 else:
-                    print("Please ensure that the phone number has 9 digits. Try again.")
+                    print("Please ensure that the phone number ")
+                    print("has 9 digits. Try again.")
             except:
-                print("Please ensure you have entered a phone number. Try again.")
+                print("Please ensure you have entered")
+                print("a phone number. Try again.")
 
         address = input("Postal Address = ")
 
@@ -141,50 +157,61 @@ while True:
             if ("@" in email):
                 break
             else:
-                print("Please ensure you have entered an email address. Try again.")
+                print("Please ensure you have entered")
+                print("an email address. Try again.")
 
-        the_contact = Contact(first_name, last_name, age, phone_number, address, email)
+        the_contact = Contact(first_name,
+                              last_name,
+                              age,
+                              phone_number,
+                              address,
+                              email)
         contacts.append(the_contact)
         print("\nThank you for entering your contact's information.")
 
     elif contact_details == "2":
-    #Displays all contacts inputted from the database.
+        # Displays all contacts inputted from the database.
         for person in contacts:
             print(person)
         input("\nContacts displayed above. Hit enter to continue.")
 
     elif contact_details == "3":
-    #Creates a search bar for users to search for a contact.
-        runner = True 
+        # Creates a search bar for users to search for a contact.
+        runner = True
         while runner:
-            to_lookup = input("\nEnter contact's name to lookup: \n\n Please ensure you use capital letters if capital letters were used when adding a contact.\n \n If there is no contact available press enter again and a list with all contacts appears.\n")
+            to_lookup = input("\nEnter contact's name to lookup: \n\n
+                              Please ensure you use capital letters if capital
+                              letters were used when adding a contact.\n \n
+                              If there is no contact available press enter
+                              again and a list with all contacts appears.\n")
 
             for person in contacts:
-                
                 if to_lookup in person.full_name():
                     print(person)
-                    runner = False 
+                    runner = False
 
     elif contact_details == "4":
-    #Removes a contact.
-    #Keyword arguments:
-    #Contacts have to be spelt exactly how they were inputted
+        # Removes a contact.
+        # Keyword arguments:
+        # Contacts have to be spelt exactly how they were inputted
 
         to_lookup = input("Enter the name to delete: ")
         for person in contacts:
             if to_lookup in person.full_name():
                 del person.full_name
-            print("Deleted the contact.")        
+            print("Deleted the contact.")
 
     elif contact_details.lower() == "5":
-    #Ends the program.
+        # Ends the program.
         break
 
-# Reading and Writing Data from a CSV File in Python for the Address Book 
-  
+# Reading and Writing Data from a CSV File in Python for the Address Book
 with open("contacts.csv", "w") as f:
     for person in contacts:
-        f.write(f"{person.first_name}, {person.last_name}, {person.age}, {person.phone_number}, {person.address}, {person.email}\n")
-
-    
+        f.write(f"{person.first_name},
+                {person.last_name},
+                {person.age},
+                {person.phone_number},
+                {person.address},
+                {person.email}\n")
 print("\nThank you for using the address book, we hope to see you soon!")
