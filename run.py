@@ -8,20 +8,6 @@ The main objective is for users to log personal contact information.
 #Installing google auth which will use our creds.json file to set up the authentication needed 
 #to access the Google Cloud project. Also installing gspread to access and update data in the spreadsheet.
 
-import gspread
-from google.oauth2.service_account import Credentials
-
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
-
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('Address Book')
-
 import os
 
 #Contact class
@@ -64,15 +50,6 @@ print('Welcome to the address book program\n')
 print('To use this app, hit enter after each choice.\n')
 print('Attention: Contacts will be saved to the contacts.csv file.')
 print('If your PC sleeps or is shut down the contacts will be removed from the csv file')
-
-def update_worksheet(data):
-    """
-    Update worksheet, add new row with the data provided by user
-    """
-    print("Updating worksheet...\n")
-    file_worksheet = SHEET.worksheet("file")
-    file_worksheet.append_row(data)
-    print("Worksheet updated successfully.\n")
 
 
 while True:
