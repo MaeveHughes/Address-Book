@@ -36,12 +36,12 @@ if os.path.isfile("contacts.csv"):
         csv_list = f.readlines()
         for line in csv_list:
             data = line.rstrip().split(",")
-            person = Contact([0],
-                             [1], 
-                             [2],
-                             [3],
-                             [4],
-                             [5])
+            person = Contact(data[0],
+                             data[1], 
+                             data[2],
+                             data[3],
+                             data[4],
+                             data[5])
             contacts.append(person)
 
 contact_details = ""
@@ -150,16 +150,13 @@ while True:
     elif contact_details == "3":
         runner = True 
         while runner:
-            to_lookup = input("\nEnter contact's name to lookup:\n")
+            to_lookup = input("\nEnter contact's name to lookup: \n\n Please ensure you use capital letters if capital letters were used when adding a contact.\n \n If there is no contact available press enter again and a list with all contacts appears.\n")
 
             for Contact in contacts:
                 
                 if to_lookup in Contact.full_name():
                     print(Contact)
                     runner = False 
-                    break
-                else:
-                    print("Contact not available in the address book.")
                 
 
     elif contact_details.lower() == "4":
