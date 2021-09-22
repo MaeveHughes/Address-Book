@@ -28,7 +28,8 @@ class Contact:
         return f'{self.first_name} {self.last_name}'
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} : {self.age} : {self.phone_number} : {self.address} : {self.email}"
+        return f"{self.first_name} {self.last_name} : {self.age} :\
+             {self.phone_number} : {self.address} : {self.email}"
 
 # Providing the user with different choices.
 # Giving the user a choice to add a contact,
@@ -61,7 +62,10 @@ while True:
     # Get functions choice
     while True:
         try:
-            contact_details = input("Please select from the below options: \n 1 - Enter a new contact \n 2 - Display all contacts \n 3 - Find a contact\n 4 - Delete a contact\n 5 - Exit program \n Select option: \n")
+            contact_details = input("Please select from the below options:\
+                 \n 1 - Enter a new contact \n 2 - Display all contacts \n\
+                  3 - Find a contact\n 4 - Delete a contact\n 5 - Exit program\
+                       \n Select option: \n")
             if (int(contact_details) >= 1 and int(contact_details) <= 5):
                 break
             else:
@@ -151,7 +155,8 @@ while True:
                 print("Please ensure you have entered")
                 print("an email address. Try again.")
 
-        the_contact = Contact(first_name, last_name, age, phone_number, address, email)
+        the_contact = Contact(first_name, last_name, age,\
+             phone_number, address, email)
         contacts.append(the_contact)
         print("\nThank you for entering your contact's information.")
 
@@ -166,7 +171,10 @@ while True:
         runner = True
         while runner:
             to_lookup = input("\nEnter contact's name to lookup: ")
-            print("Please ensure you use capital letters if capital letters were used when adding a contact. If there is no contact available press enter again and a list with all contacts appears.")
+            print("Please ensure you use capital letters if capital\
+                 letters were used when adding a contact. If there is\
+                      no contact available press enter again and a\
+                           list with all contacts appears.")
             for person in contacts:
                 if to_lookup in person.full_name():
                     print(person)
@@ -190,5 +198,6 @@ while True:
 # Reading and Writing Data from a CSV File in Python for the Address Book
 with open("contacts.csv", "w") as f:
     for person in contacts:
-        f.write(f"{person.first_name}, {person.last_name}, {person.age}, {person.phone_number}, {person.address},{person.email}")
+        f.write(f"{person.first_name}, {person.last_name}, {person.age},\
+             {person.phone_number}, {person.address},{person.email}")
 print("\nThank you for using the address book, we hope to see you soon!")
