@@ -1,16 +1,14 @@
 """
 Main file run.py, for Address Book by Maeve Hughes
-
 This is the main file for a command line interface address book.
-
 The main objective is for users to log personal contact information.
 """
-#Installing google auth which will use our creds.json file to set up the authentication needed 
-#to access the Google Cloud project. Also installing gspread to access and update data in the spreadsheet.
+# Installing google auth which will use our creds.json file to set up the authentication needed 
+# to access the Google Cloud project. Also installing gspread to access and update data in the spreadsheet.
 
 import os
 
-#Contact class
+# Contact class
 class Contact: 
     def __init__(self, first_name, last_name, age, phone_number, address, email):
         self.first_name = first_name
@@ -26,8 +24,8 @@ class Contact:
     def __str__(self):
         return f"{self.first_name} {self.last_name} : {self.age} : {self.phone_number} : {self.address}: {self.email}"
 
-#Providing the user with different choices
-#Giving the user a choice to add a contact and to print out all of the comtacts
+# Providing the user with different choices
+# Giving the user a choice to add a contact and to print out all of the comtacts
 
 contacts = list()
 
@@ -53,7 +51,7 @@ print('If your PC sleeps or is shut down the contacts will be removed from the c
 
 
 while True:
-#Get functions choice
+# Get functions choice
     while True:
         try:
             contact_details = input("\nPlease select from the below options:\n 1 - Enter a new contact\n 2 - Display all contacts\n 3 - Find a contact\n 4 - Delete a contact\n 5 - Exit program\n Select option: ")
@@ -162,7 +160,7 @@ while True:
         to_lookup = input("Enter the name to delete: ")
         for person in contacts:
             if to_lookup in person.full_name():
-                del person 
+                del person.full_name
             print("Deleted the contact.")        
 
     elif contact_details.lower() == "5":
