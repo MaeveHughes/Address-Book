@@ -29,7 +29,7 @@ class Contact:
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} : {self.age} :\
-             {self.phone_number} : {self.address} : {self.email}"
+        {self.phone_number} : {self.address} : {self.email}"
 
 # Providing the user with different choices.
 # Giving the user a choice to add a contact,
@@ -64,8 +64,8 @@ while True:
         try:
             contact_details = input("Please select from the below options:\
                  \n 1 - Enter a new contact \n 2 - Display all contacts \n\
-                  3 - Find a contact\n 54- Exit program\
-                       \n Select option: \n")
+                 3 - Find a contact\n 4- Exit program\
+                 \n Select option: \n")
             if (int(contact_details) >= 1 and int(contact_details) <= 4):
                 break
             else:
@@ -170,11 +170,11 @@ while True:
         # Creates a search bar for users to search for a contact.
         runner = True
         while runner:
-            to_lookup = input("\nEnter contact's name to lookup: ")
-            print("Please ensure you use capital letters if capital\
-                 letters were used when adding a contact. If there is\
-                      no contact available press enter again and a\
-                           list with all contacts appears.")
+            to_lookup = input("\nEnter contact's name to lookup: \
+                Please ensure you use capital letters if capital\
+                letters were used when adding a contact. If there is\
+                no contact available press enter again and a\
+                list with all contacts appears.")
             for person in contacts:
                 if to_lookup in person.full_name():
                     print(person)
