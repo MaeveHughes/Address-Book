@@ -52,7 +52,8 @@ Target audience: Users of all ages.
     <img src="Screenshot 2021-09-22 at 09.35.53.png">
     </details>
     Users are greeted with a welcome message and guide of how to proceed through the application. Users are made aware that the contacts are saved and if the pc sleeps or is shut down the data is removed from the csv. Users are then provided with a list of various options to choose from which are outlined below.
-    -   #### 1. Enter a new contact
+
+     1. Enter a new contact
     If the user selects option number one the user will have to fill out the below information:
     -   First name
     -   Last name
@@ -60,11 +61,14 @@ Target audience: Users of all ages.
     -   Phone number
     -   Address
     -   Email address
-    -   #### 2. Display all contacts
+
+    2. Display all contacts
     If the user selects option number 2, the program provides a list of all contacts. Once the user is finished with the list they can press enter to continue. This will bring the user back to the list of options.
-    -   #### 3. Find a contact
+
+    3. Find a contact
     If the user selects option number 3, the user is prompted to enter a name and the application will show all results witht hat name if valid.
-    -   #### 4. Exit program
+
+    4. Exit program
     Option number 4 quits the application.
 
 -   ### Features
