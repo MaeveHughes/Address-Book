@@ -140,7 +140,6 @@ while True:
 
         the_contact = Contact(first_name, last_name, age, phone_number, address, email)
         contacts.append(the_contact)
-        update_worksheet(the_contact)
         print("\nThank you for entering your contact's information")
 
     elif contact_details == "2":
