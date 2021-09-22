@@ -42,12 +42,12 @@ if os.path.isfile("contacts.csv"):
         csv_list = f.readlines()
         for contact_line in csv_list:
             contact_data = contact_line.rstrip().split(",")
-            person = Contact([0],
-                             [1],
-                             [2],
-                             [3],
-                             [4],
-                             [5])
+            person = Contact(contact_data[0],
+                             contact_data[1],
+                             contact_data[2],
+                             contact_data[3],
+                             contact_data[4],
+                             contact_data[5])
             contacts.append(person)
 
 contact_details = ""
@@ -63,8 +63,8 @@ while True:
     while True:
         try:
             contact_details = input("Please select from the below options:\
-                 \n 1 - Enter a new contact \n 2 - Display all contacts \n\
-                 3 - Find a contact\n 4- Exit program\
+                 \n 1 - Enter a new contact\n 2 - Display all contacts\n\
+            3 - Find a contact\n 4- Exit program\
                  \n Select option: \n")
             if (int(contact_details) >= 1 and int(contact_details) <= 4):
                 break
@@ -171,10 +171,10 @@ while True:
         runner = True
         while runner:
             to_lookup = input("\nEnter contact's name to lookup: \
-                Please ensure you use capital letters if capital\
-                letters were used when adding a contact. If there is\
-                no contact available press enter again and a\
-                list with all contacts appears.")
+            Please ensure you use capital letters if capital\
+            letters were used when adding a contact. If there is\
+            no contact available press enter again and a\
+            list with all contacts appears.")
             for person in contacts:
                 if to_lookup in person.full_name():
                     print(person)
