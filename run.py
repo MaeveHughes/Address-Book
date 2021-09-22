@@ -34,14 +34,14 @@ contacts = list()
 if os.path.isfile("contacts.csv"):
     with open("contacts.csv") as f:
         csv_list = f.readlines()
-        for line in csv_list:
-            data = line.rstrip().split(",")
-            person = Contact(data[0],
-                             data[1], 
-                             data[2],
-                             data[3],
-                             data[4],
-                             data[5])
+        for contact_line in csv_list:
+            contact_data = contact_line.rstrip().split(",")
+            person = Contact(contact_data[0],
+                             contact_data[1], 
+                             contact_data[2],
+                             contact_data[3],
+                             contact_data[4],
+                             contact_data[5])
             contacts.append(person)
 
 contact_details = ""
@@ -56,11 +56,11 @@ while True:
 #Get functions choice
     while True:
         try:
-            contact_details = input("\nPlease select from the below options:\n 1 - Enter a new contact\n 2 - Display all contacts\n 3 - Find a contact\n 4 - Exit program\n Select option: ")
-            if (int(contact_details) >= 1 and int(contact_details) <= 4):
+            contact_details = input("\nPlease select from the below options:\n 1 - Enter a new contact\n 2 - Display all contacts\n 3 - Find a contact\n 4 - Delete a contact\n 5 - Exit program\n Select option: ")
+            if (int(contact_details) >= 1 and int(contact_details) <= 5):
                 break
             else:
-                print("Please ensure the number you entered is between 1 and 3. Try again.")
+                print("Please ensure the number you entered is between 1 and 5. Try again.")
         except Exception as e:
             print("Please enter a number. Try again.") 
 
@@ -143,8 +143,8 @@ while True:
         print("\nThank you for entering your contact's information")
 
     elif contact_details == "2":
-        for Contact in contacts:
-            print(Contact)
+        for person in contacts:
+            print(person)
         input("\nContacts displayed above. Hit enter to continue.")
 
     elif contact_details == "3":
@@ -152,21 +152,27 @@ while True:
         while runner:
             to_lookup = input("\nEnter contact's name to lookup: \n\n Please ensure you use capital letters if capital letters were used when adding a contact.\n \n If there is no contact available press enter again and a list with all contacts appears.\n")
 
-            for Contact in contacts:
+            for person in contacts:
                 
-                if to_lookup in Contact.full_name():
-                    print(Contact)
+                if to_lookup in person.full_name():
+                    print(person)
                     runner = False 
-                
 
-    elif contact_details.lower() == "4":
+    elif contact_details == "4":
+        to_lookup = input("Enter the name to delete: ")
+        for person in contacts:
+            if to_lookup in person.full_name():
+                del person 
+            print("Deleted the contact.")        
+
+    elif contact_details.lower() == "5":
         break
 
 # Reading and Writing Data from a CSV File in Python for the Address Book 
   
 with open("contacts.csv", "w") as f:
-    for contact in contacts:
-        f.write(f"{Contact.first_name}, {Contact.last_name}, {Contact.age}, {Contact.phone_number}, {Contact.address}, {Contact.email}\n")
+    for person in contacts:
+        f.write(f"{person.first_name}, {person.last_name}, {person.age}, {person.phone_number}, {person.address}, {person.email}\n")
 
     
 print("\nThank you for using the address book, we hope to see you soon")
