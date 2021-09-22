@@ -32,6 +32,9 @@ Users should find it simple to input and store contacts. Users should also be aw
 Target audience: Users of all ages.
 
 -   ### Technical Design
+<details><summary>Flowchart</summary>
+<img src="Screenshot 2021-09-22 at 08.57.53.png">
+</details>
 
 
 
